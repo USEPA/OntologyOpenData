@@ -1,0 +1,257 @@
+# baseURI: http://lca.epa.gov/lcamin
+# prefix: lcamin
+
+@prefix lcamin: <http://lca.epa.gov/lcamin#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://lca.epa.gov/lcamin>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+lcamin:Activity
+  rdf:type owl:Class ;
+  rdfs:comment "The hasProperty restriction just indicates that an Activity may have Properties." ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdfs:hasProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lcamin:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lcamin:hasTemporalExtent ;
+    ] ;
+.
+lcamin:Agent
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lcamin:hasLocation ;
+    ] ;
+.
+lcamin:Compartment
+  rdf:type owl:Class ;
+  rdfs:comment "A compartment within the environment, such as air, water, etc." ;
+  rdfs:subClassOf owl:Thing ;
+.
+lcamin:Context
+  rdf:type owl:Class ;
+  rdfs:comment "A way to distinguish whether or not a particular Activity is to be considered in a given lifecycle analysis." ;
+  rdfs:subClassOf owl:Thing ;
+.
+lcamin:ElementaryFlow
+  rdf:type owl:Class ;
+  rdfs:comment "A flow into or out of a compartment." ;
+  rdfs:subClassOf lcamin:Flow ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          lcamin:FlowFromCompartment
+          lcamin:FlowToCompartment
+        ) ;
+    ] ;
+.
+lcamin:Facility
+  rdf:type owl:Class ;
+  rdfs:comment "This class serves as a bridge to the FRS ontology" ;
+  rdfs:subClassOf lcamin:Agent ;
+.
+lcamin:Flow
+  rdf:type owl:Class ;
+  rdfs:comment "The hasProperty restriction just indicates that a Flow may have Properties." ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdfs:hasProperty ;
+    ] ;
+.
+lcamin:FlowFromCompartment
+  rdf:type owl:Class ;
+  rdfs:subClassOf lcamin:ElementaryFlow ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty lcamin:hasSource ;
+      owl:someValuesFrom lcamin:Compartment ;
+    ] ;
+.
+lcamin:FlowToCompartment
+  rdf:type owl:Class ;
+  rdfs:subClassOf lcamin:ElementaryFlow ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:onProperty lcamin:hasDestination ;
+      owl:someValuesFrom lcamin:Compartment ;
+    ] ;
+.
+lcamin:IntermediateFlow
+  rdf:type owl:Class ;
+  rdfs:subClassOf lcamin:TechnosphereFlow ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty lcamin:hasSource ;
+            owl:someValuesFrom lcamin:Activity ;
+          ]
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty lcamin:hasDestination ;
+            owl:someValuesFrom lcamin:Activity ;
+          ]
+        ) ;
+    ] ;
+.
+lcamin:Location
+  rdf:type owl:Class ;
+  rdfs:comment "This class serves as a bridge to a TBD location ontology, possibly vCard" ;
+  rdfs:subClassOf owl:Thing ;
+.
+lcamin:Product
+  rdf:type owl:Class ;
+  rdfs:comment "A TechnosphereFlow that is the output of an Activity but does not flow into any Activity." ;
+  rdfs:subClassOf lcamin:TechnosphereFlow ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:onProperty lcamin:isOutputOfActivity ;
+            owl:someValuesFrom lcamin:Activity ;
+          ]
+          [
+            rdf:type owl:Class ;
+            owl:complementOf [
+                rdf:type owl:Restriction ;
+                owl:onProperty lcamin:isInputOfActivity ;
+                owl:someValuesFrom lcamin:Activity ;
+              ] ;
+          ]
+          [
+            rdf:type owl:Class ;
+            owl:complementOf lcamin:ElementaryFlow ;
+          ]
+        ) ;
+    ] ;
+.
+lcamin:Property
+  rdf:type owl:Class ;
+  rdfs:comment "This class serves as a bridge to the Property class in the GeoLink PropertyValue ontology, http://schema.geolink.org/dev/pattern/propertyvalue.owl." ;
+  rdfs:subClassOf owl:Thing ;
+.
+lcamin:ReferenceFlow
+  rdf:type owl:Class ;
+  rdfs:comment "Measure of the outputs from processes in a given product system required to fulfil the function expressed by the functional unit. (ISO 2006)" ;
+  rdfs:label "Reference flow" ;
+  rdfs:subClassOf lcamin:Flow ;
+.
+lcamin:ReferenceProduct
+  rdf:type owl:Class ;
+  rdfs:comment "If an Activity produces more than one Product, the ReferenceProduct is the primary one." ;
+  rdfs:subClassOf lcamin:Product ;
+.
+lcamin:TechnosphereFlow
+  rdf:type owl:Class ;
+  rdfs:comment "A Flow into the technosphere rather than into a Compartment." ;
+  rdfs:subClassOf lcamin:Flow ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:complementOf lcamin:ElementaryFlow ;
+    ] ;
+.
+lcamin:TemporalExtent
+  rdf:type owl:Class ;
+  rdfs:comment "This class represents a time interval and serves as a bridge to a TBD temporal ontology" ;
+  rdfs:subClassOf owl:Thing ;
+.
+lcamin:hasCompartment
+  rdf:type owl:ObjectProperty ;
+  rdfs:range lcamin:Compartment ;
+.
+lcamin:hasContext
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lcamin:Activity ;
+  rdfs:range lcamin:Context ;
+.
+lcamin:hasDestination
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "A more abstract version of isInputOf (which only refers to inputs of Activities). This allows us to refer to the environment (a Compartment) or the technosphere as the destination of a Flow." ;
+  rdfs:domain lcamin:Flow ;
+.
+lcamin:hasLocation
+  rdf:type owl:ObjectProperty ;
+  rdfs:range lcamin:Location ;
+.
+lcamin:hasProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lcamin:Context ;
+  rdfs:range lcamin:TechnosphereFlow ;
+  owl:inverseOf lcamin:isIntermediateTechnoFlowInContext ;
+.
+lcamin:hasSource
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "A more abstract version of isOutputOf (which only refers to outputs of Activities). This allows us to refer to the environment (a Compartment) as the source of a Flow." ;
+  rdfs:domain lcamin:Flow ;
+.
+lcamin:hasTemporalExtent
+  rdf:type owl:ObjectProperty ;
+  rdfs:range lcamin:TemporalExtent ;
+.
+lcamin:isInputOfActivity
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "Means the same as hasDestination, but the destination must be an Activity." ;
+  rdfs:range lcamin:Activity ;
+  rdfs:subPropertyOf lcamin:hasDestination ;
+  rdfs:subPropertyOf lcamin:isInputOrOutputOfActivity ;
+.
+lcamin:isInputOrOutputOfActivity
+  rdf:type owl:ObjectProperty ;
+.
+lcamin:isIntermediateTechnoFlowInContext
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lcamin:TechnosphereFlow ;
+  rdfs:range lcamin:Context ;
+  rdfs:subPropertyOf lcamin:occursInContext ;
+  owl:propertyChainAxiom (
+      lcamin:isInputOfActivity
+      lcamin:hasContext
+    ) ;
+.
+lcamin:isOutputOfActivity
+  rdf:type rdf:Property ;
+  rdfs:comment "Means the same as hasSource, but the source must be an Activity." ;
+  rdfs:range lcamin:Activity ;
+  rdfs:subPropertyOf lcamin:hasSource ;
+  rdfs:subPropertyOf lcamin:isInputOrOutputOfActivity ;
+.
+lcamin:occursInContext
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Connects a Flow to an ActivityContext. " ;
+  rdfs:domain lcamin:Flow ;
+  rdfs:range lcamin:Context ;
+  owl:propertyChainAxiom (
+      lcamin:isInputOrOutputOfActivity
+      lcamin:hasContext
+    ) ;
+.
+lcamin:performs
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lcamin:Agent ;
+  rdfs:range lcamin:Activity ;
+.
+rdfs:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:range lcamin:Property ;
+.
