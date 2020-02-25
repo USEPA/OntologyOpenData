@@ -1,0 +1,1248 @@
+# baseURI: http://epa.gov/lineageData
+# imports: http://epa.gov/lineage
+
+@prefix : <http://epa.gov/lineageData#> .
+@prefix lineage: <http://epa.gov/lineage#> .
+@prefix lineageData: <http://epa.gov/lineageIData#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epa.gov/lineage>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+lineage:
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage: ;
+.
+lineage:AceticAcid
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:belongsToFamily lineage:Acids ;
+  lineage:belongsToFamily lineage:OrganicChemicals ;
+  lineage:isProductOf lineage:AceticAcidProduction ;
+  rdfs:label "Acetic acid"^^xsd:string ;
+.
+lineage:AceticAcidProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Acetone
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:BisphenolA ;
+  lineage:isParentOf lineage:Isophorone ;
+  lineage:isParentOf lineage:MethylMethacrylate ;
+  lineage:isProductOf lineage:AcetoneProduction ;
+  lineage:isReactantOf lineage:BisphenolAProduction ;
+  lineage:isReactantOf lineage:IsophoroneProduction ;
+  lineage:isReactantOf lineage:MethylMethacrylateProduction ;
+.
+lineage:AcetoneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Acids
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Acids"^^xsd:string ;
+.
+lineage:AcrylicAcid
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:AcrylicPolymers ;
+  lineage:isProductOf lineage:AcrylicAcidProduction ;
+  lineage:isReactantOf lineage:AcrylicPolymerProduction ;
+.
+lineage:AcrylicAcidProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:AcrylicPolymerProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:AcrylicPolymers
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:AcrylicPolymerProduction ;
+.
+lineage:Acrylonitrile
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:AcrylonitrileProduction ;
+.
+lineage:AcrylonitrileProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:AdipicAcid
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage: ;
+  lineage:isProductOf lineage:AdipicAcidProduction ;
+  lineage:isReactantOf lineage: ;
+.
+lineage:AdipicAcidProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Alcohols
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Alcohols"^^xsd:string ;
+.
+lineage:AllylChloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Epicholorohydrin ;
+  lineage:isProductOf lineage:AllylChlorideProduction ;
+  lineage:isReactantOf lineage:EpichlorohydrinProduction ;
+.
+lineage:AllylChlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Aniline
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:AnilineProduction ;
+.
+lineage:AnilineProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Anthracene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:AnthraceneProduction ;
+.
+lineage:AnthraceneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Bases
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Bases"^^xsd:string ;
+.
+lineage:Benzene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Cumene ;
+  lineage:isParentOf lineage:Nitrobenzene ;
+  lineage:isProductOf lineage:BenzeneProduction ;
+  lineage:isReactantOf lineage:CumeneProduction ;
+  lineage:isReactantOf lineage:NitrobenzeneProduction ;
+.
+lineage:BenzeneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:BisphenolA
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:EpoxyResins ;
+  lineage:isParentOf lineage:PolycarbonatesResins ;
+  lineage:isProductOf lineage:BisphenolAProduction ;
+  lineage:isReactantOf lineage:EpoxyResinsProduction ;
+  lineage:isReactantOf lineage:PolycarbonatesResinsProduction ;
+.
+lineage:BisphenolAProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Butadiene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:ButadieneProduction ;
+.
+lineage:ButadieneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Butane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:ButaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Butylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:ButyleneProduction ;
+.
+lineage:ButyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Caprolactam
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Nylon6 ;
+  lineage:isProductOf lineage:CaprolactamProduction ;
+  lineage:isReactantOf lineage:Nylon6Production ;
+.
+lineage:CaprolactamProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:CarbolicOil
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Cresols ;
+  lineage:isParentOf lineage:Naphthalene ;
+  lineage:isParentOf lineage:Phenol ;
+  lineage:isProductOf lineage:carbolicOilProduction ;
+  lineage:isReactantOf lineage:NaphthaleneProduction ;
+  lineage:isReactantOf lineage:PhenolProduction ;
+  lineage:isReactantOf lineage:cresolsProduction ;
+.
+lineage:CarbonMonoxide
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Methanol ;
+  lineage:isProductOf lineage:carbonMonoxideProduction ;
+  lineage:isReactantOf lineage:MethanolProduction ;
+.
+lineage:CarbonTetrachloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:carbonTetrachlorideProduction ;
+.
+lineage:Chloroform
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:chloroformProduction ;
+.
+lineage:ClementalSulphur
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:NaturalGasDistillation ;
+.
+lineage:Coal
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:CoalCondensate ;
+  lineage:isParentOf lineage:CoalGas ;
+  lineage:isParentOf lineage:Coke ;
+  lineage:isReactantOf lineage:CoalCondensateProduction ;
+  lineage:isReactantOf lineage:CoalGasProduction ;
+  lineage:isReactantOf lineage:CokeProduction ;
+.
+lineage:CoalCondensate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:CoalLightOils ;
+  lineage:isParentOf lineage:CoalTar ;
+  lineage:isProductOf lineage:CoalCondensateProduction ;
+  lineage:isReactantOf lineage:coalLightOilProduction ;
+  lineage:isReactantOf lineage:coalTarsProduction ;
+.
+lineage:CoalCondensateProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:CoalGas
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Methane ;
+  lineage:isProductOf lineage:CoalGasProduction ;
+  lineage:isReactantOf lineage:MethaneProduction ;
+.
+lineage:CoalGasProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:CoalLightOils
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Benzene ;
+  lineage:isParentOf lineage:Naphtha ;
+  lineage:isParentOf lineage:Picolines ;
+  lineage:isParentOf lineage:Pyridine ;
+  lineage:isParentOf lineage:Toluene ;
+  lineage:isProductOf lineage:coalLightOilProduction ;
+  lineage:isReactantOf lineage:BenzeneProduction ;
+  lineage:isReactantOf lineage:NaphthaProduction ;
+  lineage:isReactantOf lineage:PicolineProduction ;
+  lineage:isReactantOf lineage:PyridineProduction ;
+  lineage:isReactantOf lineage:tolueneProduction ;
+.
+lineage:CoalTar
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:CarbolicOil ;
+  lineage:isParentOf lineage:HeavyCresoteOil ;
+  lineage:isParentOf lineage:LightCresoteOil ;
+  lineage:isParentOf lineage:Pitch ;
+  lineage:isParentOf lineage:RefinedTar ;
+  lineage:isProductOf lineage:coalTarsProduction ;
+  lineage:isReactantOf lineage:HeavyCresoteOilProduction ;
+  lineage:isReactantOf lineage:LightCresoteOilProduction ;
+  lineage:isReactantOf lineage:PitchProduction ;
+  lineage:isReactantOf lineage:RefinedTarProduction ;
+  lineage:isReactantOf lineage:carbolicOilProduction ;
+.
+lineage:Coke
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:CokeProduction ;
+.
+lineage:CokeProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Cresols
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:cresolsProduction ;
+.
+lineage:CrudeOil
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:GasOil ;
+  lineage:isParentOf lineage:LPGas ;
+  lineage:isParentOf lineage:Naphtha ;
+  lineage:isParentOf lineage:RefineryGas ;
+  lineage:isReactantOf lineage:GasOilProduction ;
+  lineage:isReactantOf lineage:LPGasProduction ;
+  lineage:isReactantOf lineage:NaphthaProduction ;
+  lineage:isReactantOf lineage:RefineryGasProduction ;
+.
+lineage:Cumene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Acetone ;
+  lineage:isParentOf lineage:Phenol ;
+  lineage:isProductOf lineage:CumeneProduction ;
+  lineage:isReactantOf lineage:AcetoneProduction ;
+  lineage:isReactantOf lineage:PhenolProduction ;
+.
+lineage:CumeneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Cyclohexane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:AdipicAcid ;
+  lineage:isProductOf lineage:cyclohexaneProduction ;
+  lineage:isReactantOf lineage:AdipicAcidProduction ;
+.
+lineage:Cyclohexanone
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Caprolactam ;
+  lineage:isProductOf lineage:CyclohexanoneProduction ;
+  lineage:isReactantOf lineage:CaprolactamProduction ;
+.
+lineage:CyclohexanoneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Cyclopentadiene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:cyclopentadieneProduction ;
+.
+lineage:ElementalSulphur
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:ElementalSulphurProduction ;
+.
+lineage:ElementalSulphurProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:EngineCoolants
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:EngineCoolantsProduction ;
+.
+lineage:EngineCoolantsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:EpichlorohydrinProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Epicholorohydrin
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:EpoxyResins ;
+  lineage:isProductOf lineage:EpichlorohydrinProduction ;
+  lineage:isReactantOf lineage:EpoxyResinsProduction ;
+.
+lineage:EpoxyResins
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:EpoxyResinsProduction ;
+.
+lineage:EpoxyResinsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Esters
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Esters"^^xsd:string ;
+.
+lineage:Ethane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:EthaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Ethanol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:EthanolProduction ;
+.
+lineage:EthanolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Ethoxylates
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:EthoxylatesProduction ;
+.
+lineage:EthoxylatesProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Ethylbenzene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Styrene ;
+  lineage:isProductOf lineage:EthylbenzeneProduction ;
+  lineage:isReactantOf lineage:StyreneProduction ;
+.
+lineage:EthylbenzeneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Ethylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Ethanol ;
+  lineage:isParentOf lineage:EthyleneOxide ;
+  lineage:isParentOf lineage:Polyethylene ;
+  lineage:isParentOf lineage:VinylAcetate ;
+  lineage:isParentOf lineage:dicholoroethane ;
+  lineage:isProductOf lineage:EthyleneProduction ;
+  lineage:isReactantOf lineage:EthanolProduction ;
+  lineage:isReactantOf lineage:EthyleneOxideProduction ;
+  lineage:isReactantOf lineage:PolyethyleneProduction ;
+  lineage:isReactantOf lineage:VinylAcetateProduction ;
+  lineage:isReactantOf lineage:dicholoroethaneProduction ;
+.
+lineage:EthyleneGlycol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:EngineCoolants ;
+  lineage:isParentOf lineage:Polyesters ;
+  lineage:isProductOf lineage:EthyleneGlycolProduction ;
+  lineage:isReactantOf lineage:EngineCoolantsProduction ;
+  lineage:isReactantOf lineage:PolyestersProduction ;
+.
+lineage:EthyleneGlycolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:EthyleneOxide
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Ethoxylates ;
+  lineage:isParentOf lineage:EthyleneGlycol ;
+  lineage:isParentOf lineage:GlycolEthers ;
+  lineage:isProductOf lineage:EthyleneOxideProduction ;
+  lineage:isReactantOf lineage:EthoxylatesProduction ;
+  lineage:isReactantOf lineage:EthyleneGlycolProduction ;
+  lineage:isReactantOf lineage:GlycolEthersProduction ;
+.
+lineage:EthyleneOxideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:EthyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Formaldehyde
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:FormaldehydeProduction ;
+.
+lineage:FormaldehydeProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:GasOil
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Benzene ;
+  lineage:isParentOf lineage:Butadiene ;
+  lineage:isParentOf lineage:Butylene ;
+  lineage:isParentOf lineage:Cyclopentadiene ;
+  lineage:isParentOf lineage:Isobutylene ;
+  lineage:isParentOf lineage:Isoprene ;
+  lineage:isParentOf lineage:Methane ;
+  lineage:isParentOf lineage:Toluene ;
+  lineage:isParentOf lineage:Xylenes ;
+  lineage:isProductOf lineage:GasOilProduction ;
+  lineage:isReactantOf lineage:BenzeneProduction ;
+  lineage:isReactantOf lineage:ButadieneProduction ;
+  lineage:isReactantOf lineage:ButyleneProduction ;
+  lineage:isReactantOf lineage:MethaneProduction ;
+  lineage:isReactantOf lineage:XyleneProduction ;
+  lineage:isReactantOf lineage:cyclopentadieneProduction ;
+  lineage:isReactantOf lineage:isobutyleneProduction ;
+  lineage:isReactantOf lineage:isopreneProduction ;
+  lineage:isReactantOf lineage:tolueneProduction ;
+.
+lineage:GasOilProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:GlycolEthers
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:GlycolEthersProduction ;
+.
+lineage:GlycolEthersProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:HeavyCresoteOil
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Anthracene ;
+  lineage:isParentOf lineage:Phenanthrene ;
+  lineage:isProductOf lineage:HeavyCresoteOilProduction ;
+  lineage:isReactantOf lineage:AnthraceneProduction ;
+  lineage:isReactantOf lineage:PhenanthreneProduction ;
+.
+lineage:HeavyCresoteOilProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Hydrogen
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Methanol ;
+  lineage:isProductOf lineage:HydrogenProduction ;
+  lineage:isReactantOf lineage:MethanolProduction ;
+.
+lineage:HydrogenProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Indene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:InorganicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Inorganic chemicals"^^xsd:string ;
+.
+lineage:Isobutylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:isobutyleneProduction ;
+.
+lineage:Isophorone
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:IsophoroneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Isoprene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:isopreneProduction ;
+.
+lineage:IsopropylAlcohol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:IsopropylAlcoholProduction ;
+.
+lineage:IsopropylAlcoholProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:LPGas
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Ethylene ;
+  lineage:isProductOf lineage:LPGasProduction ;
+  lineage:isReactantOf lineage:EthyleneProduction ;
+.
+lineage:LPGasProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:LightCresoteOil
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:LightCresoteOilProduction ;
+.
+lineage:LightCresoteOilProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:MetallicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Organic chemicals"^^xsd:string ;
+.
+lineage:Methane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isParentOf lineage:CarbonMonoxide ;
+  lineage:isParentOf lineage:Hydrogen ;
+  lineage:isParentOf lineage:MethylChloride ;
+  lineage:isProductOf lineage:MethaneProduction ;
+  lineage:isReactantOf lineage:HydrogenProduction ;
+  lineage:isReactantOf lineage:MethylChlorideProduction ;
+  lineage:isReactantOf lineage:carbonMonoxideProduction ;
+.
+lineage:MethaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Methanol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:AceticAcid ;
+  lineage:isParentOf lineage:Formaldehyde ;
+  lineage:isParentOf lineage:MethylAcrylate ;
+  lineage:isParentOf lineage:MethylMethacrylate ;
+  lineage:isProductOf lineage:MethanolProduction ;
+  lineage:isReactantOf lineage:AceticAcidProduction ;
+  lineage:isReactantOf lineage:FormaldehydeProduction ;
+  lineage:isReactantOf lineage:MethylAcrylateProduction ;
+  lineage:isReactantOf lineage:MethylMethacrylateProduction ;
+.
+lineage:MethanolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:MethylAcrylate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:MethylAcrylateProduction ;
+.
+lineage:MethylAcrylateProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:MethylChloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:CarbonTetrachloride ;
+  lineage:isParentOf lineage:Chloroform ;
+  lineage:isParentOf lineage:MethyleneChloride ;
+  lineage:isProductOf lineage:MethylChlorideProduction ;
+  lineage:isReactantOf lineage:MethyleneChlorideProduction ;
+  lineage:isReactantOf lineage:carbonTetrachlorideProduction ;
+  lineage:isReactantOf lineage:chloroformProduction ;
+.
+lineage:MethylChlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:MethylMethacrylate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:MethylMethacrylateProduction ;
+.
+lineage:MethylMethacrylateProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:MethyleneChloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:MethyleneChlorideProduction ;
+.
+lineage:MethyleneChlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Naphtha
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Cyclohexane ;
+  lineage:isParentOf lineage:Ethylbenzene ;
+  lineage:isParentOf lineage:Indene ;
+  lineage:isParentOf lineage:Methane ;
+  lineage:isParentOf lineage:Naphthalene ;
+  lineage:isParentOf lineage:Propylene ;
+  lineage:isParentOf lineage:Xylenes ;
+  lineage:isProductOf lineage:NaphthaProduction ;
+  lineage:isReactantOf lineage:EthylbenzeneProduction ;
+  lineage:isReactantOf lineage:MethaneProduction ;
+  lineage:isReactantOf lineage:NaphthaleneProduction ;
+  lineage:isReactantOf lineage:PropyleneProduction ;
+  lineage:isReactantOf lineage:XyleneProduction ;
+  lineage:isReactantOf lineage:cyclohexaneProduction ;
+  lineage:isReactantOf lineage:indeneProduction ;
+.
+lineage:NaphthaProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Naphthalene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:NaphthaleneProduction ;
+.
+lineage:NaphthaleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:NaturalGas
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:ElementalSulphur ;
+  lineage:isParentOf lineage:RawGasFromNaturalGas ;
+  lineage:isReactantOf lineage:ElementalSulphurProduction ;
+  lineage:isReactantOf lineage:RawGasFromNaturalGasProduction ;
+.
+lineage:NaturalGasDistillation
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Nitrobenzene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Aniline ;
+  lineage:isProductOf lineage:NitrobenzeneProduction ;
+  lineage:isReactantOf lineage:AnilineProduction ;
+.
+lineage:NitrobenzeneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Nitrotoluene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:NitrotolueneProduction ;
+.
+lineage:NitrotolueneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Nylon6
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:Nylon6Production ;
+.
+lineage:Nylon6Production
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:OrganicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Organic chemicals"^^xsd:string ;
+.
+lineage:Pentane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PentaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Phenanthrene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PhenanthreneProduction ;
+.
+lineage:PhenanthreneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Phenol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:BisphenolA ;
+  lineage:isParentOf lineage:Cyclohexanone ;
+  lineage:isParentOf lineage:PhenolicResins ;
+  lineage:isProductOf lineage:PhenolProduction ;
+  lineage:isReactantOf lineage:BisphenolAProduction ;
+  lineage:isReactantOf lineage:CyclohexanoneProduction ;
+  lineage:isReactantOf lineage:PhenolicResinsProduction ;
+.
+lineage:PhenolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PhenolicResins
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PhenolicResinsProduction ;
+.
+lineage:PhenolicResinsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PicolineProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Picolines
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PicolineProduction ;
+.
+lineage:Pitch
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PitchProduction ;
+.
+lineage:PitchProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PolycarbonatesResins
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolycarbonatesResinsProduction ;
+.
+lineage:PolycarbonatesResinsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Polyesters
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolyestersProduction ;
+.
+lineage:PolyestersProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Polyethylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolyethyleneProduction ;
+.
+lineage:PolyethyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Polyol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolyolProduction ;
+.
+lineage:PolyolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Polypropylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolypropyleneProduction ;
+.
+lineage:PolypropyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Polystyrene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolystyreneProduction ;
+.
+lineage:PolystyreneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PolyvinylChloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PolyvinylChlorideProduction ;
+.
+lineage:PolyvinylChlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Production
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Propane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PropaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Propylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:AcrylicAcid ;
+  lineage:isParentOf lineage:Acrylonitrile ;
+  lineage:isParentOf lineage:AllylChloride ;
+  lineage:isParentOf lineage:Cumene ;
+  lineage:isParentOf lineage:IsopropylAlcohol ;
+  lineage:isParentOf lineage:Polypropylene ;
+  lineage:isParentOf lineage:PropyleneOxide ;
+  lineage:isParentOf lineage:n-Butyraldehyde ;
+  lineage:isProductOf lineage:PropyleneProduction ;
+  lineage:isReactantOf lineage:AcrylicAcidProduction ;
+  lineage:isReactantOf lineage:AcrylonitrileProduction ;
+  lineage:isReactantOf lineage:AllylChlorideProduction ;
+  lineage:isReactantOf lineage:CumeneProduction ;
+  lineage:isReactantOf lineage:IsopropylAlcoholProduction ;
+  lineage:isReactantOf lineage:PolypropyleneProduction ;
+  lineage:isReactantOf lineage:PropyleneOxideProduction ;
+  lineage:isReactantOf lineage:n-ButyraldehydeProduction ;
+.
+lineage:PropyleneGlycol
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PropyleneGlycolProduction ;
+.
+lineage:PropyleneGlycolProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PropyleneOxide
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:GlycolEthers ;
+  lineage:isParentOf lineage:Polyol ;
+  lineage:isParentOf lineage:PropyleneGlycol ;
+  lineage:isProductOf lineage:PropyleneOxideProduction ;
+  lineage:isReactantOf lineage:GlycolEthersProduction ;
+  lineage:isReactantOf lineage:PolyolProduction ;
+  lineage:isReactantOf lineage:PropyleneGlycolProduction ;
+.
+lineage:PropyleneOxideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:PropyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Pyridine
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:PyridineProduction ;
+.
+lineage:PyridineProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:RawGasFromNaturalGas
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Butane ;
+  lineage:isParentOf lineage:Ethane ;
+  lineage:isParentOf lineage:Methane ;
+  lineage:isParentOf lineage:Pentane ;
+  lineage:isParentOf lineage:Propane ;
+  lineage:isProductOf lineage:RawGasFromNaturalGasProduction ;
+  lineage:isReactantOf lineage:ButaneProduction ;
+  lineage:isReactantOf lineage:EthaneProduction ;
+  lineage:isReactantOf lineage:MethaneProduction ;
+  lineage:isReactantOf lineage:PentaneProduction ;
+  lineage:isReactantOf lineage:PropaneProduction ;
+.
+lineage:RawGasFromNaturalGasProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:RefinedTar
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:RefinedTarProduction ;
+.
+lineage:RefinedTarProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:RefineryGas
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Methane ;
+  lineage:isProductOf lineage:RefineryGasProduction ;
+  lineage:isReactantOf lineage:MethaneProduction ;
+.
+lineage:RefineryGasProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Styrene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Polystyrene ;
+  lineage:isProductOf lineage:StyreneProduction ;
+  lineage:isReactantOf lineage:PolystyreneProduction ;
+.
+lineage:StyreneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Tetrachloroethylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:TetrachloroethyleneProduction ;
+.
+lineage:TetrachloroethyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Toluene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Benzene ;
+  lineage:isParentOf lineage:Nitrotoluene ;
+  lineage:isParentOf lineage:Xylenes ;
+  lineage:isParentOf lineage:tolueneDiisocyanate ;
+  lineage:isProductOf lineage:tolueneProduction ;
+  lineage:isReactantOf lineage:BenzeneProduction ;
+  lineage:isReactantOf lineage:NitrotolueneProduction ;
+  lineage:isReactantOf lineage:XyleneProduction ;
+  lineage:isReactantOf lineage:tolueneDiisocyanateProduction ;
+.
+lineage:Trichloroethylene
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:TrichloroethyleneProduction ;
+.
+lineage:TrichloroethyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:VinylAcetate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:VinylAcetateProduction ;
+.
+lineage:VinylAcetateProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:VinylChloride
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:PolyvinylChloride ;
+  lineage:isProductOf lineage:VinylChlorideProduction ;
+  lineage:isReactantOf lineage:PolyvinylChlorideProduction ;
+.
+lineage:VinylChlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:XyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:Xylenes
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:hasAncestor lineage:GasOil ;
+  lineage:hasParent lineage:GasOil ;
+  lineage:isProductOf lineage:XyleneProduction ;
+.
+lineage:carbolicOilProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:carbonMonoxideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:carbonTetrachlorideProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:chloroformProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:coalLightOilProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:coalTarsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:cresolsProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:cyclohexaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:cyclopentadieneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:dicholoroethane
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isParentOf lineage:Tetrachloroethylene ;
+  lineage:isParentOf lineage:Trichloroethylene ;
+  lineage:isParentOf lineage:VinylChloride ;
+  lineage:isProductOf lineage:dicholoroethaneProduction ;
+  lineage:isReactantOf lineage:TetrachloroethyleneProduction ;
+  lineage:isReactantOf lineage:TrichloroethyleneProduction ;
+  lineage:isReactantOf lineage:VinylChlorideProduction ;
+.
+lineage:dicholoroethaneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:hasPhaseTransferAgent
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has phase transfer agent"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasCatalyst ;
+.
+lineage:hasPressure
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has pressure"^^xsd:string ;
+  rdfs:range xsd:Decimal ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:hasReactionTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has reaction time"^^xsd:string ;
+  rdfs:range xsd:Decimal ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:hasTemperature
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has temperature"^^xsd:string ;
+  rdfs:range xsd:Decimal ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:indeneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:isParticipantInReaction
+  owl:inverseOf lineage:hasReactionParticipant ;
+.
+lineage:isobutyleneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:isopreneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:n-Butyraldehyde
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:n-ButyraldehydeProduction ;
+.
+lineage:n-ButyraldehydeProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:tolueneDiisocyanate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+  lineage:isProductOf lineage:tolueneDiisocyanateProduction ;
+.
+lineage:tolueneDiisocyanateProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+lineage:tolueneProduction
+  rdf:type lineage:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+.
+<http://epa.gov/lineageData>
+  rdf:type owl:Ontology ;
+  owl:imports <http://epa.gov/lineage> ;
+.
+[
+  rdf:type owl:Class ;
+  owl:intersectionOf (
+      lineage:ReactionParticipant
+      [
+        rdf:type owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty lineage:isByProductOf ;
+      ]
+    ) ;
+].
+[
+  rdf:type owl:Class ;
+  owl:intersectionOf (
+      lineage:ReactionParticipant
+      [
+        rdf:type owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty lineage:isCatalystOf ;
+      ]
+    ) ;
+].
+[
+  rdf:type owl:Class ;
+  owl:intersectionOf (
+      lineage:ReactionParticipant
+      [
+        rdf:type owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty lineage:isProductOf ;
+      ]
+    ) ;
+].
+[
+  rdf:type owl:Class ;
+  owl:intersectionOf (
+      lineage:ReactionParticipant
+      [
+        rdf:type owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty lineage:isReactantOf ;
+      ]
+    ) ;
+].
+[
+  rdf:type owl:Class ;
+  owl:intersectionOf (
+      lineage:ReactionParticipant
+      [
+        rdf:type owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty lineage:isSolventOf ;
+      ]
+    ) ;
+].

@@ -1,0 +1,809 @@
+# baseURI: http://epa.gov/process
+# imports: http://epa.gov/lineage
+# prefix: process
+
+@prefix : <http://epa.gov/process#> .
+@prefix lineag: <http://epa.gov/lineage> .
+@prefix lineage: <http://epa.gov/lineage#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix process: <http://epa.gov/process#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epa.gov/process>
+  rdf:type owl:Ontology ;
+  owl:imports <http://epa.gov/lineage> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+process:Absorber
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Vapr_separation_system ;
+.
+process:Adsorber
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Vapr_separation_system ;
+.
+process:Air_control_unit
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Treatment_system ;
+.
+process:Ammonia
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:AmmoniumCarbonate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:AmmoniumHydroxide
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:AmmoniumHydroxylamine
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:AmmoniumNitrite
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:CSTR
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Tank ;
+.
+process:CSTR_type_1
+  rdf:type process:CSTR ;
+  rdf:type owl:NamedIndividual ;
+.
+process:CSTR_type_2
+  rdf:type process:CSTR ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Caprolactum
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:CaprolactumProduction
+  rdf:type process:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+  process:hasReactorSystem process:CSTR_type_2 ;
+  process:hasSeparationSystem process:Crystallizer_type_1 ;
+  process:hasSeparationSystem process:Decantor_type_2 ;
+  process:hasSeparationSystem process:distillation_column_type_1 ;
+  process:hasSeparationSystem process:distillation_column_type_2 ;
+  process:hasSeparationSystem process:liquid_extractor_column_type_1 ;
+  process:hasTemperature "80 C"^^xsd:string ;
+  process:has_catalyst process:SulphuricAcid ;
+  process:has_catalyst_contact_time "3 to 10 seconds"^^xsd:string ;
+  process:has_feed_ratio "sulphuric acid to cyclohexanone oxime 1:1.45"^^xsd:string ;
+  process:has_product process:Caprolactum ;
+  process:has_reactant process:CyclohexanoneOxime ;
+  process:has_recirculation_rate "40 times fresh feed"^^xsd:string ;
+  process:has_yield "99.1 percent of Cyclohexanone Oxime fed"^^xsd:string ;
+.
+process:Centrifuge
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Chemical
+  rdf:type owl:Class ;
+  rdfs:comment "A chemical in the context of a process. It can have properties that the underlying molecular lineage:Chemical would not have."^^xsd:string ;
+  rdfs:label "Chemical"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+process:ChemicalReaction
+  rdf:type owl:Class ;
+  rdfs:comment "A chemical reaction in the context of a process. It can have properties that the underlying molecular lineage:ChemicalReaction would not have."^^xsd:string ;
+  rdfs:label "Chemical reaction"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+process:Compressor
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Miscellaneous_system ;
+.
+process:Condenser
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Vapr_separation_system ;
+.
+process:Cooling_tower
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Utilities ;
+.
+process:Crystallizer
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Liquid_separation_system ;
+.
+process:Crystallizer_type_1
+  rdf:type process:Crystallizer ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Cyclohexanone
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:CyclohexanoneOxime
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:CyclohexanoneOximeProduction
+  rdf:type process:ChemicalReaction ;
+  rdf:type owl:NamedIndividual ;
+  process:hasReactorSystem process:CSTR_type_1 ;
+  process:hasSeparationSystem process:Decanter_type1 ;
+  process:has_conversion 99.6 ;
+  process:has_product process:CyclohexanoneOxime ;
+  process:has_reactant process:Ammonia ;
+  process:has_reactant process:Cyclohexanone ;
+  process:has_reactant process:HydroxylAmmoniumSulfate ;
+  process:has_recirculation_rate "40 times feed"^^xsd:string ;
+  process:has_retention_time "7 minutes"^^xsd:string ;
+.
+process:Cyclone
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Decanter
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Liquid_separation_system ;
+.
+process:Decanter_type1
+  rdf:type process:Decanter ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Decantor_type_2
+  rdf:type process:Decanter ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Distillation_column
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Liquid_separation_system ;
+.
+process:Dryer
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Electricity
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Utilities ;
+.
+process:Evaporator
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Liquid_separation_system ;
+.
+process:Extraction_column
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Liquid_separation_system ;
+.
+process:Filter
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Fixed_roof_tank
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Storage_system ;
+.
+process:Flash_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Vapr_separation_system ;
+.
+process:Floating_roof_tank
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Storage_system ;
+.
+process:Gas_tank
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Storage_system ;
+.
+process:Gaseous
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Gaseous"^^xsd:string ;
+.
+process:Heat_exchanger
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Heat_integration ;
+.
+process:Heat_integration
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:High_pressure_steam
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Steam ;
+.
+process:HydroxylAmmoniumSulfate
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Liquid
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Liquid"^^xsd:string ;
+.
+process:Liquid_separation_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Separation_system ;
+.
+process:Membrane
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Vapr_separation_system ;
+.
+process:Miscellaneous_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Mixer
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Miscellaneous_system ;
+.
+process:Nitrogen
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Oxygen
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Packed_tower
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Tube ;
+.
+process:Packed_tower_type_1
+  rdf:type process:Packed_tower ;
+  rdf:type owl:NamedIndividual ;
+  process:has_packed_height "2 m"^^xsd:decimal ;
+  process:has_packing_type "1 cm ceramic saddles"^^xsd:string ;
+.
+process:Precipitator
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Pretreatment_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Pump
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Miscellaneous_system ;
+.
+process:Reactive_distillation
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Reactor_system ;
+.
+process:Reactor_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Refrigeration_unit
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Utilities ;
+.
+process:Separation_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Settler
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Solid_separation_system ;
+.
+process:Solid
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Solid"^^xsd:string ;
+.
+process:Solid_separation_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Separation_system ;
+.
+process:Steam
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Utilities ;
+.
+process:Storage_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Subsystem
+  rdf:type owl:Class ;
+.
+process:SulphurDioxide
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:SulphuricAcid
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:Tank
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Reactor_system ;
+.
+process:Treatment_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Tube
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Reactor_system ;
+.
+process:Utilities
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Subsystem ;
+.
+process:Vapr_separation_system
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Separation_system ;
+.
+process:Water
+  rdf:type lineage:Chemical ;
+  rdf:type owl:NamedIndividual ;
+.
+process:distillation_column_type_1
+  rdf:type process:Distillation_column ;
+  rdf:type owl:NamedIndividual ;
+.
+process:distillation_column_type_2
+  rdf:type process:Distillation_column ;
+  rdf:type owl:NamedIndividual ;
+.
+process:hasChemical
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This is the link from a process:Chemical (a chemical in the context of a process) to a lineage:Chemical (the molecular chemical itself)."^^xsd:string ;
+  rdfs:domain process:Chemical ;
+  rdfs:label "has underlying chemical"^^xsd:string ;
+  rdfs:range lineage:Chemical ;
+.
+process:hasChemicalReaction
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This is the link from a process:ChemicalReaction (a reaction in the context of a process) to a lineage:ChemicalReaction (the molecualr reaction itself)."^^xsd:string ;
+  rdfs:domain process:ChemicalReaction ;
+  rdfs:label "has chemical reaction"^^xsd:string ;
+  rdfs:label "has underlying chemical reaction"^^xsd:string ;
+  rdfs:range lineage:ChemicalReaction ;
+  rdfs:range process:ChemicalReaction ;
+.
+process:hasConstant
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain process:ChemicalReaction ;
+  rdfs:label "has constant"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasExtent
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has extent"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasFeedsInertImpurityFraction
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has feeds inert impurity fraction"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasHeatDuty
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has heat duty"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasInfluentMolarRatio
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has feeds inert impurity fraction"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasLimitingReactant
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has limiting reactant"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactant ;
+  owl:inverseOf process:isLimitingReactantOf ;
+.
+process:hasPhase
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has phase"^^xsd:string ;
+.
+process:hasPressure
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has pressure"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasProductionRate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has production rate"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasPurgeFraction
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has purge fraction"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasReactionRate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has reaction rate"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasReactorSystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has reactor system"^^xsd:string ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+  owl:inverseOf process:isReactorSystemOf ;
+.
+process:hasSelectivity
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has selectivity"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasSeparationSystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has separation system"^^xsd:string ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+  owl:inverseOf process:isSeparationSystemOf ;
+.
+process:hasStorageSystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has storage system"^^xsd:string ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+  owl:inverseOf process:isStorageSystemOf ;
+.
+process:hasSubsystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has subsystem"^^xsd:string ;
+  owl:inverseOf process:isSubsystemOf ;
+.
+process:hasTemperature
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has temperature"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:hasTreatmentSystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has treatment system"^^xsd:string ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+  owl:inverseOf process:isTreatmentSystemOf ;
+.
+process:hasWeight
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has weight"^^xsd:string ;
+  rdfs:range xsd:decimal ;
+.
+process:has_Utilities
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+.
+process:has_absorber
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_vapor_separation_system ;
+.
+process:has_adsorber
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_vapor_separation_system ;
+.
+process:has_air_control_unit
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasTreatmentSystem ;
+.
+process:has_boinling_point
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_buffer
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_byproduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_catalyst
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_catalyst_contact_time
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_centrifuge
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_coefficient_of_volume_expansion
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_compressor
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_miscellaneous_system ;
+.
+process:has_condenser
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_vapor_separation_system ;
+.
+process:has_conversion
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_cooling_tower
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_Utilities ;
+.
+process:has_crystallizer
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_liquid_separation_system ;
+.
+process:has_cyclone
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_decanter
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_liquid_separation_system ;
+.
+process:has_density
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_distillation_column
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_liquid_separation_system ;
+.
+process:has_dryer
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_electricity
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_Utilities ;
+.
+process:has_evaporator
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_liquid_separation_system ;
+.
+process:has_extraction_column
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_liquid_separation_system ;
+.
+process:has_feed_ratio
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_filter
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_fixed_roof_tank
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasStorageSystem ;
+.
+process:has_flash_point
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_flash_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_vapor_separation_system ;
+.
+process:has_floating_roof_tank
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasStorageSystem ;
+.
+process:has_gas_flow_rate
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_gas_tank
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasStorageSystem ;
+.
+process:has_heat_exchanger
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_heat_integration_system ;
+.
+process:has_heat_integration_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+.
+process:has_heat_of_fusion
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_heat_of_polycondensation
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_heat_of_vaporization
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_high_pressure_steam
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_steam ;
+.
+process:has_ignition_temperature
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_inert
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_input_and_output
+  rdf:type owl:ObjectProperty ;
+.
+process:has_liquid_flow_rate
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_liquid_separation_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSeparationSystem ;
+.
+process:has_low_pressure_steam
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_steam ;
+.
+process:has_lower_explosion_limit
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_melting_point
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_membrane
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_vapor_separation_system ;
+.
+process:has_miscellaneous_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+.
+process:has_mixer
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_miscellaneous_system ;
+.
+process:has_molecular_weight
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_packed_height
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_packing_type
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_precipitator
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_pretreatment_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSubsystem ;
+.
+process:has_product
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_promoter
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_pump
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_miscellaneous_system ;
+.
+process:has_reactant
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_reaction_rate
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_reactive_distillation
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasReactorSystem ;
+.
+process:has_recirculation_rate
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_refrigeration_unit
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_Utilities ;
+.
+process:has_retention_time
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_settler
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_solid_separation_system ;
+.
+process:has_solid_separation_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSeparationSystem ;
+.
+process:has_solid_treatment
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasTreatmentSystem ;
+.
+process:has_solvent
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_specific_heat
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_steam
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_Utilities ;
+.
+process:has_tank
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasReactorSystem ;
+.
+process:has_thermal_conductivity_coefficient
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_tower_diameter
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_tube
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasReactorSystem ;
+.
+process:has_upper_explosion_limit
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_vapor_pressure
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_vapor_separation_system
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasSeparationSystem ;
+.
+process:has_viscosity
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_volume
+  rdf:type owl:DatatypeProperty ;
+.
+process:has_waste
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:has_input_and_output ;
+.
+process:has_wastewater_treatment
+  rdf:type owl:ObjectProperty ;
+  rdfs:subPropertyOf process:hasTreatmentSystem ;
+.
+process:has_yield
+  rdf:type owl:DatatypeProperty ;
+.
+process:isInertOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is inert of"^^xsd:string ;
+.
+process:isLimitingReactantOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is limiting reactant of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isReactantOf ;
+.
+process:isReactorSystemOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is reactor system of"^^xsd:string ;
+  rdfs:subPropertyOf process:isSubsystemOf ;
+.
+process:isSeparationSystemOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is separation system of"^^xsd:string ;
+  rdfs:subPropertyOf process:isSubsystemOf ;
+.
+process:isStorageSystemOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is storage system of"^^xsd:string ;
+  rdfs:subPropertyOf process:isSubsystemOf ;
+.
+process:isSubsystemOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is subsystem of"^^xsd:string ;
+.
+process:isTreatmentSystemOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is treatment system of"^^xsd:string ;
+  rdfs:subPropertyOf process:isSubsystemOf ;
+.
+process:liquid_extractor_column_type_1
+  rdf:type process:Extraction_column ;
+  rdf:type owl:NamedIndividual ;
+.
+process:low_pressure_steam
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Steam ;
+.
+process:packed_tower_type_2
+  rdf:type process:Packed_tower ;
+  rdf:type owl:NamedIndividual ;
+.
+process:solid_treatment
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Treatment_system ;
+.
+process:wastewater_treatment
+  rdf:type owl:Class ;
+  rdfs:subClassOf process:Treatment_system ;
+.
