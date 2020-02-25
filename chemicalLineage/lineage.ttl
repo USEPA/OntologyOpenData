@@ -1,0 +1,346 @@
+# baseURI: http://epa.gov/lineage
+
+@prefix : <http://epa.gov/lineage> .
+@prefix lineage: <http://epa.gov/lineage#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epa.gov/lineage>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+lineage:Acid
+  rdf:type owl:Class ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subClassOf lineage:Chemical ;
+.
+lineage:Acids
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Acids"^^xsd:string ;
+.
+lineage:Alcohol
+  rdf:type owl:Class ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subClassOf lineage:Chemical ;
+.
+lineage:Alcohols
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Alcohols"^^xsd:string ;
+.
+lineage:Base
+  rdf:type owl:Class ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subClassOf lineage:Chemical ;
+.
+lineage:Bases
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Bases"^^xsd:string ;
+.
+lineage:BroadFamily
+  rdf:type owl:Class ;
+  rdfs:label "Funtional family"^^xsd:string ;
+  rdfs:subClassOf lineage:ChemicalFamily ;
+.
+lineage:ByProduct
+  rdf:type owl:Class ;
+  rdfs:label "ByProduct"^^xsd:string ;
+  rdfs:subClassOf lineage:ReactionParticipant ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lineage:isByProductOf ;
+    ] ;
+.
+lineage:Catalyst
+  rdf:type owl:Class ;
+  rdfs:label "Catalyst"^^xsd:string ;
+  rdfs:subClassOf lineage:ReactionParticipant ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lineage:isCatalystOf ;
+    ] ;
+.
+lineage:Chemical
+  rdf:type owl:Class ;
+  rdfs:label "Chemical "^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+lineage:ChemicalFamily
+  rdf:type owl:Class ;
+  rdfs:label "Chemical family"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+lineage:ChemicalReaction
+  rdf:type owl:Class ;
+.
+lineage:Ester
+  rdf:type owl:Class ;
+  rdfs:label ""^^xsd:string ;
+  rdfs:subClassOf lineage:Chemical ;
+.
+lineage:Esters
+  rdf:type lineage:FunctionalFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Esters"^^xsd:string ;
+.
+lineage:FunctionalFamily
+  rdf:type owl:Class ;
+  rdfs:label "Funtional family"^^xsd:string ;
+  rdfs:subClassOf lineage:ChemicalFamily ;
+.
+lineage:InorganicChemical
+  rdf:type owl:Class ;
+  rdfs:label "Inorganic chemica"^^xsd:string ;
+  rdfs:subClassOf lineage:Chemical ;
+.
+lineage:InorganicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Inorganic chemicals"^^xsd:string ;
+.
+lineage:MetallicChemical
+  rdf:type owl:Class ;
+  rdfs:label "Metallic chemical"^^xsd:string ;
+  rdfs:subClassOf lineage:InorganicChemical ;
+.
+lineage:MetallicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Organic chemicals"^^xsd:string ;
+.
+lineage:OrganicChemicals
+  rdf:type lineage:BroadFamily ;
+  rdf:type owl:NamedIndividual ;
+  rdfs:label "Organic chemicals"^^xsd:string ;
+.
+lineage:Product
+  rdf:type owl:Class ;
+  rdfs:label "Product"^^xsd:string ;
+  rdfs:subClassOf lineage:ReactionParticipant ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lineage:isProductOf ;
+    ] ;
+.
+lineage:Reactant
+  rdf:type owl:Class ;
+  rdfs:label "Reactant"^^xsd:string ;
+  rdfs:subClassOf lineage:ReactionParticipant ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lineage:isReactantOf ;
+    ] ;
+.
+lineage:ReactionParticipant
+  rdf:type owl:Class ;
+  rdfs:comment "A reaction participant is a chemical that plays a role in a reaction, together with its stoichiometry."^^xsd:string ;
+  rdfs:label "Reaction participant"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+.
+lineage:Solvent
+  rdf:type owl:Class ;
+  rdfs:label "Solvent"^^xsd:string ;
+  rdfs:subClassOf lineage:ReactionParticipant ;
+  owl:equivalentClass [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty lineage:isSolventOf ;
+    ] ;
+.
+lineage:belongsToFamily
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:label "belongs to family"^^xsd:string ;
+  rdfs:range lineage:ChemicalFamily ;
+.
+lineage:hasAncestor
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:range lineage:Chemical ;
+  owl:inverseOf lineage:isAncestorOf ;
+.
+lineage:hasByProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has byproduct"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactionParticipant ;
+  owl:inverseOf lineage:isByProductOf ;
+.
+lineage:hasCASNumber
+  rdf:type owl:AnnotationProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:range xsd:string ;
+.
+lineage:hasCatalyst
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has catalyst"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactionParticipant ;
+  owl:inverseOf lineage:isCatalystOf ;
+.
+lineage:hasChemical
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lineage:ReactionParticipant ;
+  rdfs:label "has chemical"^^xsd:string ;
+  rdfs:range lineage:Chemical ;
+.
+lineage:hasCondition
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has condition"^^xsd:string ;
+.
+lineage:hasParent
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:range lineage:Chemical ;
+  rdfs:subPropertyOf lineage:hasAncestor ;
+  owl:inverseOf lineage:isParentOf ;
+  owl:propertyChainAxiom [
+      rdf:type rdf:List ;
+      rdf:first lineage:isByProductOf ;
+      rdf:rest [
+          rdf:type rdf:List ;
+          rdf:first lineage:hasReactant ;
+          rdf:rest () ;
+        ] ;
+    ] ;
+  owl:propertyChainAxiom [
+      rdf:type rdf:List ;
+      rdf:first lineage:isProductOf ;
+      rdf:rest [
+          rdf:type rdf:List ;
+          rdf:first lineage:hasReactant ;
+          rdf:rest () ;
+        ] ;
+    ] ;
+.
+lineage:hasPhaseTransferAgent
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has phase transfer agent"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasCatalyst ;
+.
+lineage:hasPressure
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has pressure"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:hasProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has product"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactionParticipant ;
+  owl:inverseOf lineage:isProductOf ;
+.
+lineage:hasReactant
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has reactant"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactionParticipant ;
+  owl:inverseOf lineage:isReactantOf ;
+.
+lineage:hasReactionId
+  rdf:type owl:AnnotationProperty ;
+.
+lineage:hasReactionParticipant
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has reaction partipant"^^xsd:string ;
+  rdfs:range lineage:ReactionParticipant ;
+.
+lineage:hasReactionTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has reaction time"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:hasSolvent
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has solvent"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasReactionParticipant ;
+  owl:inverseOf lineage:isSolventOf ;
+.
+lineage:hasStoichiometry
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "A chemical that plays some role in a reaction, along with its stoichiometry"^^xsd:string ;
+  rdfs:domain lineage:ReactionParticipant ;
+  rdfs:label "has stoichiometry"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
+lineage:hasTemperature
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has temperature"^^xsd:string ;
+  rdfs:subPropertyOf lineage:hasCondition ;
+.
+lineage:isAncestorOf
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:range lineage:Chemical ;
+  rdfs:subPropertyOf lineage:isAncestorOf ;
+  owl:propertyChainAxiom [
+      rdf:type rdf:List ;
+      rdf:first lineage:isParentOf ;
+      rdf:rest [
+          rdf:type rdf:List ;
+          rdf:first lineage:isParentOf ;
+          rdf:rest () ;
+        ] ;
+    ] ;
+.
+lineage:isByProductOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is byproduct of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isParticipantInReaction ;
+.
+lineage:isCatalystOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is catalyst of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isParticipantInReaction ;
+.
+lineage:isParentOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lineage:Chemical ;
+  rdfs:range lineage:Chemical ;
+  rdfs:subPropertyOf lineage:isAncestorOf ;
+  owl:propertyChainAxiom [
+      rdf:type rdf:List ;
+      rdf:first lineage:isReactantOf ;
+      rdf:rest [
+          rdf:type rdf:List ;
+          rdf:first lineage:hasByProduct ;
+          rdf:rest () ;
+        ] ;
+    ] ;
+  owl:propertyChainAxiom [
+      rdf:type rdf:List ;
+      rdf:first lineage:isReactantOf ;
+      rdf:rest [
+          rdf:type rdf:List ;
+          rdf:first lineage:hasProduct ;
+          rdf:rest () ;
+        ] ;
+    ] ;
+.
+lineage:isParticipantInReaction
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lineage:ReactionParticipant ;
+  rdfs:label "is participant in reaction"^^xsd:string ;
+.
+lineage:isProductOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is product of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isParticipantInReaction ;
+.
+lineage:isReactantOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is reactant of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isParticipantInReaction ;
+.
+lineage:isSolventOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "is solvent of"^^xsd:string ;
+  rdfs:subPropertyOf lineage:isParticipantInReaction ;
+.

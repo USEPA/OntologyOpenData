@@ -1,0 +1,28 @@
+# baseURI: http://epa.gov/lcaLineageMap
+# imports: http://epa.gov/lineage
+# imports: http://epa.gov/process
+# imports: http://lca.epa.gov/3RS/cdr
+# imports: http://lca.epa.gov/lcamin
+# prefix: lcaLineageMap
+
+@prefix lcaLineageMap: <http://epa.gov/lcaLineageMap#> .
+@prefix lineag: <http://epa.gov/lineage> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://epa.gov/lcaLineageMap>
+  rdf:type owl:Ontology ;
+  owl:imports <http://epa.gov/lineage> ;
+  owl:imports <http://epa.gov/process> ;
+  owl:imports <http://lca.epa.gov/3RS/cdr> ;
+  owl:imports <http://lca.epa.gov/lcamin> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+<http://epa.gov/lineage#Chemical>
+  owl:equivalentClass <http://lca.epa.gov/3RS/cdr#Chemical> ;
+.
+<http://epa.gov/process#Process>
+  rdfs:subClassOf <http://lca.epa.gov/lcamin#Activity> ;
+.
