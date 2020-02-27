@@ -40,6 +40,11 @@ lcamin:Agent
       owl:onProperty lcamin:hasLocation ;
     ] ;
 .
+lcamin:ChemicalFlowable
+  rdf:type owl:Class ;
+  rdfs:label "ChemicalFlowable" ;
+  rdfs:subClassOf lcamin:Flowable ;
+.
 lcamin:Compartment
   rdf:type owl:Class ;
   rdfs:comment "A compartment within the environment, such as air, water, etc." ;
@@ -94,6 +99,12 @@ lcamin:FlowToCompartment
       owl:onProperty lcamin:hasDestination ;
       owl:someValuesFrom lcamin:Compartment ;
     ] ;
+.
+lcamin:Flowable
+  rdf:type owl:Class ;
+  rdfs:comment "The property that is being transfered by a Flow." ;
+  rdfs:label "Flowable" ;
+  rdfs:subClassOf owl:Thing ;
 .
 lcamin:IntermediateFlow
   rdf:type owl:Class ;
@@ -189,6 +200,12 @@ lcamin:hasDestination
   rdf:type owl:FunctionalProperty ;
   rdfs:comment "A more abstract version of isInputOf (which only refers to inputs of Activities). This allows us to refer to the environment (a Compartment) or the technosphere as the destination of a Flow." ;
   rdfs:domain lcamin:Flow ;
+.
+lcamin:hasFlowable
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain lcamin:Flow ;
+  rdfs:label "has flowable" ;
+  rdfs:range lcamin:Flowable ;
 .
 lcamin:hasLocation
   rdf:type owl:ObjectProperty ;
